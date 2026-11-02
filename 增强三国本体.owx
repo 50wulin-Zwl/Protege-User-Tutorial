@@ -1,0 +1,1476 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://www.semanticweb.org/93928/ontologies/2026/9/untitled-ontology-28" ontologyIRI="http://www.semanticweb.org/93928/ontologies/2026/9/untitled-ontology-28">
+    <Prefix name="" IRI="http://www.semanticweb.org/93928/ontologies/2026/9/untitled-ontology-28/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="zh">三国人物关系本体｜Protégé中文教学增强版</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="zh">沿用原文件的三国人物、势力、武器、坐骑和推理规则。各个实体的 Annotations（注释）区域都有中文说明。新增少量注释属性、逻辑属性特征、实例断言及查询示例，用于认识 Protégé 各功能页。</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal>中文学习演示版 1.0（保留原本体主体及赵云的推理示例）</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="#教学提示"/>
+        <Literal xml:lang="zh">导航：Classes 查看层级/等价/互斥；Object Properties 查看逆属性、属性链、对称性与传递性；Data Properties 查看数据类型；Individuals by class 查看实例和断言；Reasoner 运行 HermiT；DL Query 手动输入示例查询。</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="#练习提示"/>
+        <Literal xml:lang="zh">DL Query 示例：人物 and (使用 some 武器)；武官 and (武力值 some xsd:integer[&gt;= 95])（不同版本对数据范围表达式支持不一）；蜀方人物。初学者优先查询「武官」「猛将」「蜀方人物」。</Literal>
+    </Annotation>
+    <!-- =================================================================== -->
+    <!-- 1. 类声明 (Class Declarations)                                       -->
+    <!-- =================================================================== -->
+    <Declaration>
+        <Class IRI="#人物"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#皇上"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#文官"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#武官"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#猛将"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#势力"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#工具"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#武器"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#日常工具"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#马"/>
+    </Declaration>
+    <!-- =================================================================== -->
+    <!-- 2. 对象属性声明 (Object Property Declarations)                       -->
+    <!-- =================================================================== -->
+    <Declaration>
+        <ObjectProperty IRI="#使用"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#被使用"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#骑乘"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#被骑乘"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#属于"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#拥有成员"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#执掌"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#忠诚于"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#统领"/>
+    </Declaration>
+    <!-- =================================================================== -->
+    <!-- 3. 数据属性声明 (Data Property Declarations)                         -->
+    <!-- =================================================================== -->
+    <Declaration>
+        <DataProperty IRI="#字"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#武力值"/>
+    </Declaration>
+    <!-- =================================================================== -->
+    <!-- 4. 个体/实例声明 (Named Individual Declarations)                     -->
+    <!-- =================================================================== -->
+    <Declaration>
+        <NamedIndividual IRI="#刘备"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#关羽"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#张飞"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#赵云"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#诸葛亮"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#蜀"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#青龙刀"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#丈八蛇矛"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#龙胆枪"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#双股剑"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#羽扇"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#赤兔马"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#的卢马"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#乌云踏雪"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#白龙马"/>
+    </Declaration>
+    <!-- =================================================================== -->
+    <!-- 5. 基础类层级关系 (Named Class Hierarchy)                            -->
+    <!-- =================================================================== -->
+    <SubClassOf>
+        <Class IRI="#皇上"/>
+        <Class IRI="#人物"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#文官"/>
+        <Class IRI="#人物"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#武官"/>
+        <Class IRI="#人物"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#猛将"/>
+        <Class IRI="#武官"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#武器"/>
+        <Class IRI="#工具"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#日常工具"/>
+        <Class IRI="#工具"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#马"/>
+        <Class IRI="#工具"/>
+    </SubClassOf>
+    <!-- 顶层类别互斥：人物、工具、势力两两不相交 -->
+    <DisjointClasses>
+        <Class IRI="#人物"/>
+        <Class IRI="#工具"/>
+        <Class IRI="#势力"/>
+    </DisjointClasses>
+    <!-- =================================================================== -->
+    <!-- 6. 触发推理机亮黄色分类的核心：EquivalentClasses (等价类/充要条件)    -->
+    <!-- =================================================================== -->
+    <!-- [推理规则 1] 武官的充要条件：凡是【人物】且【使用 some 武器】且【骑乘 some 马】且【忠诚于 some 皇上】，自动推理为【武官】！ -->
+    <!-- 测试效果：赵云没有手写类型是武官，开启推理后会被自动推导为【武官】！ -->
+    <EquivalentClasses>
+        <Class IRI="#武官"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#人物"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#使用"/>
+                <Class IRI="#武器"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#骑乘"/>
+                <Class IRI="#马"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#忠诚于"/>
+                <Class IRI="#皇上"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <!-- [推理规则 2] 猛将的充要条件：凡是【武官】且【武力值 >= 95】，自动推理为【猛将】！ -->
+    <!-- 测试效果：关羽(97)、张飞(98)、赵云(97) 都没有手写是猛将，开启推理后全部亮黄色归入【猛将】！ -->
+    <EquivalentClasses>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="zh">公理注释示例：这一整条等价类公理解释了「武力值至少95」如何触发猛将分类。</Literal>
+        </Annotation>
+        <Class IRI="#猛将"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#武官"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#武力值"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:integer"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">95</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <!-- =================================================================== -->
+    <!-- 7. SubClassOf 匿名公理约束 (对应 Protégé 的 SubClass Of)             -->
+    <!-- =================================================================== -->
+    <!-- [人物] 约束 1：属于 some 势力（原 exactly 1 与属性链不符合 OWL 2 DL 非简单属性限制，改为存在性限制） -->
+    <SubClassOf>
+        <Class IRI="#人物"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#属于"/>
+            <Class IRI="#势力"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <!-- [人物] 约束 2：字 max 1 string -->
+    <SubClassOf>
+        <Class IRI="#人物"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#字"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <!-- [人物] 约束 3：骑乘 min 0 马 -->
+    <SubClassOf>
+        <Class IRI="#人物"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#骑乘"/>
+            <Class IRI="#马"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <!-- [人物] 约束 4：使用 min 0 工具 -->
+    <SubClassOf>
+        <Class IRI="#人物"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#使用"/>
+            <Class IRI="#工具"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <!-- [皇上] 专属约束：执掌 exactly 1 势力 -->
+    <SubClassOf>
+        <Class IRI="#皇上"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#执掌"/>
+            <Class IRI="#势力"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <!-- [武官] 专属约束：忠诚于 exactly 1 皇上 -->
+    <SubClassOf>
+        <Class IRI="#武官"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#忠诚于"/>
+            <Class IRI="#皇上"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <!-- [文官] 专属约束 1：忠诚于 exactly 1 皇上 -->
+    <SubClassOf>
+        <Class IRI="#文官"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#忠诚于"/>
+            <Class IRI="#皇上"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <!-- [文官] 专属约束 2：使用 min 0 日常工具 -->
+    <SubClassOf>
+        <Class IRI="#文官"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="#使用"/>
+            <Class IRI="#日常工具"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <!-- =================================================================== -->
+    <!-- 8. 触发属性自动推理的核心：子属性、逆属性与属性链                     -->
+    <!-- =================================================================== -->
+    <!-- [推理规则 3：子属性推理] 执掌 是 属于 的子属性 -->
+    <!-- 刘备只写了【执掌 蜀】，没写【属于 蜀】；开启推理后自动推出【刘备 属于 蜀】！ -->
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#执掌"/>
+        <ObjectProperty IRI="#属于"/>
+    </SubObjectPropertyOf>
+    <!-- [推理规则 4：属性链推理 (Property Chain)] 忠诚于 o 执掌 -> 属于 -->
+    <!-- 如果 A 忠诚于 B，且 B 执掌 C，则自动推出 A 属于 C！ -->
+    <!-- 关羽、张飞、赵云、诸葛亮 都没手写【属于 蜀】，开启推理后全部自动推出【属于 蜀】！ -->
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#忠诚于"/>
+            <ObjectProperty IRI="#执掌"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#属于"/>
+    </SubObjectPropertyOf>
+    <!-- [推理规则 5：逆属性推理 (InverseOf)] 自动反向连边 -->
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#统领"/>
+        <ObjectProperty IRI="#忠诚于"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#被使用"/>
+        <ObjectProperty IRI="#使用"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#被骑乘"/>
+        <ObjectProperty IRI="#骑乘"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#拥有成员"/>
+        <ObjectProperty IRI="#属于"/>
+    </InverseObjectProperties>
+    <!-- 属性定义域与值域 (Domains & Ranges) —— 也会触发自动类型推导！ -->
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#使用"/>
+        <Class IRI="#人物"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#使用"/>
+        <Class IRI="#工具"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#属于"/>
+        <Class IRI="#人物"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#属于"/>
+        <Class IRI="#势力"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#执掌"/>
+        <Class IRI="#皇上"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#执掌"/>
+        <Class IRI="#势力"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#忠诚于"/>
+        <ObjectUnionOf>
+            <Class IRI="#文官"/>
+            <Class IRI="#武官"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#忠诚于"/>
+        <Class IRI="#皇上"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#骑乘"/>
+        <Class IRI="#人物"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#骑乘"/>
+        <Class IRI="#马"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#字"/>
+        <Class IRI="#人物"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#字"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#武力值"/>
+        <Class IRI="#人物"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#武力值"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <!-- =================================================================== -->
+    <!-- 9. 实例类型断言 (刻意留白部分类型，让推理机自动推导出来！)            -->
+    <!-- =================================================================== -->
+    <ClassAssertion>
+        <Class IRI="#皇上"/>
+        <NamedIndividual IRI="#刘备"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#武官"/>
+        <NamedIndividual IRI="#关羽"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#武官"/>
+        <NamedIndividual IRI="#张飞"/>
+    </ClassAssertion>
+    <!-- 注意：这里故意【不写】赵云是武官、甚至不写赵云是人物，也不写白龙马是马！全靠推理机自动推导！ -->
+    <ClassAssertion>
+        <Class IRI="#文官"/>
+        <NamedIndividual IRI="#诸葛亮"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#势力"/>
+        <NamedIndividual IRI="#蜀"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#武器"/>
+        <NamedIndividual IRI="#青龙刀"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#武器"/>
+        <NamedIndividual IRI="#丈八蛇矛"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#武器"/>
+        <NamedIndividual IRI="#龙胆枪"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#武器"/>
+        <NamedIndividual IRI="#双股剑"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#日常工具"/>
+        <NamedIndividual IRI="#羽扇"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#马"/>
+        <NamedIndividual IRI="#赤兔马"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#马"/>
+        <NamedIndividual IRI="#的卢马"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#马"/>
+        <NamedIndividual IRI="#乌云踏雪"/>
+    </ClassAssertion>
+    <!-- =================================================================== -->
+    <!-- 10. 实例属性断言 (故意不写“属于 蜀”，看推理机如何自动推导！)          -->
+    <!-- =================================================================== -->
+    <!-- 刘备：只写【执掌 蜀】，不写【属于 蜀】；开启推理后自动推出【属于 蜀】与【统领 关羽/张飞/赵云/诸葛亮】 -->
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#执掌"/>
+        <NamedIndividual IRI="#刘备"/>
+        <NamedIndividual IRI="#蜀"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#使用"/>
+        <NamedIndividual IRI="#刘备"/>
+        <NamedIndividual IRI="#双股剑"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#骑乘"/>
+        <NamedIndividual IRI="#刘备"/>
+        <NamedIndividual IRI="#的卢马"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#字"/>
+        <NamedIndividual IRI="#刘备"/>
+        <Literal>玄德</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#武力值"/>
+        <NamedIndividual IRI="#刘备"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">75</Literal>
+    </DataPropertyAssertion>
+    <!-- 关羽：只写忠诚于刘备、武力值97；开启推理后自动推出【属于 蜀】和【类型：猛将】 -->
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#使用"/>
+        <NamedIndividual IRI="#关羽"/>
+        <NamedIndividual IRI="#青龙刀"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#骑乘"/>
+        <NamedIndividual IRI="#关羽"/>
+        <NamedIndividual IRI="#赤兔马"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#忠诚于"/>
+        <NamedIndividual IRI="#关羽"/>
+        <NamedIndividual IRI="#刘备"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#字"/>
+        <NamedIndividual IRI="#关羽"/>
+        <Literal>云长</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#武力值"/>
+        <NamedIndividual IRI="#关羽"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">97</Literal>
+    </DataPropertyAssertion>
+    <!-- 张飞：只写忠诚于刘备、武力值98；开启推理后自动推出【属于 蜀】和【类型：猛将】 -->
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#使用"/>
+        <NamedIndividual IRI="#张飞"/>
+        <NamedIndividual IRI="#丈八蛇矛"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#骑乘"/>
+        <NamedIndividual IRI="#张飞"/>
+        <NamedIndividual IRI="#乌云踏雪"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#忠诚于"/>
+        <NamedIndividual IRI="#张飞"/>
+        <NamedIndividual IRI="#刘备"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#字"/>
+        <NamedIndividual IRI="#张飞"/>
+        <Literal>翼德</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#武力值"/>
+        <NamedIndividual IRI="#张飞"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">98</Literal>
+    </DataPropertyAssertion>
+    <!-- 赵云：故意没写任何类型（连“人物”都没写！），开启推理后自动推出【人物 -> 武官 -> 猛将】且【属于 蜀】！ -->
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#使用"/>
+        <NamedIndividual IRI="#赵云"/>
+        <NamedIndividual IRI="#龙胆枪"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#骑乘"/>
+        <NamedIndividual IRI="#赵云"/>
+        <NamedIndividual IRI="#白龙马"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#忠诚于"/>
+        <NamedIndividual IRI="#赵云"/>
+        <NamedIndividual IRI="#刘备"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#字"/>
+        <NamedIndividual IRI="#赵云"/>
+        <Literal>子龙</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#武力值"/>
+        <NamedIndividual IRI="#赵云"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">97</Literal>
+    </DataPropertyAssertion>
+    <!-- 诸葛亮：只写忠诚于刘备；开启推理后自动推出【属于 蜀】 -->
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#忠诚于"/>
+        <NamedIndividual IRI="#诸葛亮"/>
+        <NamedIndividual IRI="#刘备"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#使用"/>
+        <NamedIndividual IRI="#诸葛亮"/>
+        <NamedIndividual IRI="#羽扇"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#字"/>
+        <NamedIndividual IRI="#诸葛亮"/>
+        <Literal>孔明</Literal>
+    </DataPropertyAssertion>
+    <!-- 教学增强：声明——新类、对象属性、数据属性、注释属性与个体 -->
+    <Declaration>
+        <Class IRI="#蜀方人物"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#教学角色"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#结义"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#指挥链上级"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#是否主公"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#演示评分"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#演示总分"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#演示编号"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#教学提示"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#练习提示"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#刘玄德"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#演示角色甲"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#演示角色乙"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#演示角色丙"/>
+    </Declaration>
+    <!-- 教学增强：类的继承、等价类、互斥的示例 -->
+    <SubClassOf>
+        <Class IRI="#教学角色"/>
+        <Class IRI="#人物"/>
+    </SubClassOf>
+    <EquivalentClasses>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="zh">Class → Equivalent To：满足人物且属于蜀势力者自动归入蜀方人物，依赖属性链的推理结果。</Literal>
+        </Annotation>
+        <Class IRI="#蜀方人物"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#人物"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#属于"/>
+                <NamedIndividual IRI="#蜀"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <DisjointClasses>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="zh">Class → Disjoint With：本教学本体将武器与日常工具定义为互不相交的类别。</Literal>
+        </Annotation>
+        <Class IRI="#武器"/>
+        <Class IRI="#日常工具"/>
+    </DisjointClasses>
+    <HasKey>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="zh">Classes → Keys：教学角色以演示编号为键，两个命名的教学角色若有同一编号，会被推断是同一个体。</Literal>
+        </Annotation>
+        <Class IRI="#教学角色"/>
+        <DataProperty IRI="#演示编号"/>
+    </HasKey>
+    <!-- 教学增强：属性层级、特征、定义域和值域 -->
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#练习提示"/>
+        <AnnotationProperty IRI="#教学提示"/>
+    </SubAnnotationPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#结义"/>
+        <Class IRI="#人物"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#结义"/>
+        <Class IRI="#人物"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#指挥链上级"/>
+        <Class IRI="#人物"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#指挥链上级"/>
+        <Class IRI="#人物"/>
+    </ObjectPropertyRange>
+    <FunctionalObjectProperty>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="zh">同一统治者最多执掌一个势力；用于 Object Properties → Characteristics 的 Functional 示例。</Literal>
+        </Annotation>
+        <ObjectProperty IRI="#执掌"/>
+    </FunctionalObjectProperty>
+    <SymmetricObjectProperty>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="zh">结义是对称关系：刘备结义关羽，则推理得关羽结义刘备。</Literal>
+        </Annotation>
+        <ObjectProperty IRI="#结义"/>
+    </SymmetricObjectProperty>
+    <IrreflexiveObjectProperty>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="zh">结义为非自反关系：任何个体不能与自己结义。</Literal>
+        </Annotation>
+        <ObjectProperty IRI="#结义"/>
+    </IrreflexiveObjectProperty>
+    <TransitiveObjectProperty>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="zh">传递关系（虚构练习角色）：甲高于乙、乙高于丙，可推理甲高于丙。</Literal>
+        </Annotation>
+        <ObjectProperty IRI="#指挥链上级"/>
+    </TransitiveObjectProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#是否主公"/>
+        <Class IRI="#人物"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#是否主公"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#演示评分"/>
+        <Class IRI="#人物"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#演示评分"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#演示总分"/>
+        <Class IRI="#人物"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#演示总分"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#演示编号"/>
+        <Class IRI="#教学角色"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#演示编号"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <SubDataPropertyOf>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="zh">Data Properties → Sub Property Of：演示评分是演示总分的子属性，因而赵云有演示评分9.5也能推出演示总分9.5。</Literal>
+        </Annotation>
+        <DataProperty IRI="#演示评分"/>
+        <DataProperty IRI="#演示总分"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="zh">Data Properties → Characteristics：每个个体对该属性最多只有一个不同的值。</Literal>
+        </Annotation>
+        <DataProperty IRI="#是否主公"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="zh">教学角色的演示编号最多一个值，并用 HasKey 展示键功能。</Literal>
+        </Annotation>
+        <DataProperty IRI="#演示编号"/>
+    </FunctionalDataProperty>
+    <!-- 教学增强：个体断言（正向/否定/相同/不同） -->
+    <ClassAssertion>
+        <Class IRI="#教学角色"/>
+        <NamedIndividual IRI="#演示角色甲"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#属于"/>
+        <NamedIndividual IRI="#演示角色甲"/>
+        <NamedIndividual IRI="#蜀"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#演示编号"/>
+        <NamedIndividual IRI="#演示角色甲"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A01</Literal>
+    </DataPropertyAssertion>
+    <ClassAssertion>
+        <Class IRI="#教学角色"/>
+        <NamedIndividual IRI="#演示角色乙"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#属于"/>
+        <NamedIndividual IRI="#演示角色乙"/>
+        <NamedIndividual IRI="#蜀"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#演示编号"/>
+        <NamedIndividual IRI="#演示角色乙"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A02</Literal>
+    </DataPropertyAssertion>
+    <ClassAssertion>
+        <Class IRI="#教学角色"/>
+        <NamedIndividual IRI="#演示角色丙"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#属于"/>
+        <NamedIndividual IRI="#演示角色丙"/>
+        <NamedIndividual IRI="#蜀"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#演示编号"/>
+        <NamedIndividual IRI="#演示角色丙"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A03</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#结义"/>
+        <NamedIndividual IRI="#刘备"/>
+        <NamedIndividual IRI="#关羽"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#结义"/>
+        <NamedIndividual IRI="#刘备"/>
+        <NamedIndividual IRI="#张飞"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#指挥链上级"/>
+        <NamedIndividual IRI="#演示角色甲"/>
+        <NamedIndividual IRI="#演示角色乙"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#指挥链上级"/>
+        <NamedIndividual IRI="#演示角色乙"/>
+        <NamedIndividual IRI="#演示角色丙"/>
+    </ObjectPropertyAssertion>
+    <NegativeObjectPropertyAssertion>
+        <ObjectProperty IRI="#骑乘"/>
+        <NamedIndividual IRI="#刘备"/>
+        <NamedIndividual IRI="#赤兔马"/>
+    </NegativeObjectPropertyAssertion>
+    <NegativeDataPropertyAssertion>
+        <DataProperty IRI="#武力值"/>
+        <NamedIndividual IRI="#关羽"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">60</Literal>
+    </NegativeDataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#是否主公"/>
+        <NamedIndividual IRI="#刘备"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#是否主公"/>
+        <NamedIndividual IRI="#关羽"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#演示评分"/>
+        <NamedIndividual IRI="#赵云"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">9.5</Literal>
+    </DataPropertyAssertion>
+    <SameIndividual>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="zh">Individuals → Same As：刘玄德只是刘备的另一个名称，不表示第二个人。</Literal>
+        </Annotation>
+        <NamedIndividual IRI="#刘备"/>
+        <NamedIndividual IRI="#刘玄德"/>
+    </SameIndividual>
+    <DifferentIndividuals>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal xml:lang="zh">Individuals → Different From：显式指出这些名字代表不同的人。</Literal>
+        </Annotation>
+        <NamedIndividual IRI="#刘备"/>
+        <NamedIndividual IRI="#关羽"/>
+        <NamedIndividual IRI="#张飞"/>
+        <NamedIndividual IRI="#赵云"/>
+        <NamedIndividual IRI="#诸葛亮"/>
+    </DifferentIndividuals>
+    <!-- 教学增强：为原有及新增实体添加中文标签、说明及具体操作提示 -->
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#人物</IRI>
+        <Literal xml:lang="zh">人物</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#人物</IRI>
+        <Literal xml:lang="zh">Classes 页：点开 SubClass Of 查看上位类及「属于 some 势力」「字 max 1」等约束；其中「骑乘 min 0」只用于展示语法，实际上不增加限制。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#皇上</IRI>
+        <Literal xml:lang="zh">皇上</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#皇上</IRI>
+        <Literal xml:lang="zh">Classes 页：人物的子类；SubClass Of 存在「执掌 exactly 1 势力」；点击 Individuals 查看刘备。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#文官</IRI>
+        <Literal xml:lang="zh">文官</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#文官</IRI>
+        <Literal xml:lang="zh">Classes 页：人物的子类；诸葛亮为实例，查看「忠诚于 exactly 1 皇上」。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#武官</IRI>
+        <Literal xml:lang="zh">武官</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#武官</IRI>
+        <Literal xml:lang="zh">Classes 页：Equivalent To 提供充要条件：人物且使用武器、骑乘马、忠诚于皇上。启动推理机后赵云可被归入武官。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#猛将</IRI>
+        <Literal xml:lang="zh">猛将</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#猛将</IRI>
+        <Literal xml:lang="zh">Classes 页：武官的子类；Equivalent To 的整数范围限制为武力值≥95。推理机应把关羽、张飞、赵云归入猛将。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#势力</IRI>
+        <Literal xml:lang="zh">势力</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#势力</IRI>
+        <Literal xml:lang="zh">顶层类之一，与人物、工具互斥；现有实例「蜀」；Object Properties 的属于/执掌值域为势力。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#工具</IRI>
+        <Literal xml:lang="zh">工具</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#工具</IRI>
+        <Literal xml:lang="zh">上位类，下有武器、日常工具、马；马归入工具是原本体教学抽象，并非现实中的严谨生物分类。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#武器</IRI>
+        <Literal xml:lang="zh">武器</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#武器</IRI>
+        <Literal xml:lang="zh">工具的子类；与日常工具设置 Disjoint With（互斥）。实例有青龙刀、丈八蛇矛等。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#日常工具</IRI>
+        <Literal xml:lang="zh">日常工具</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#日常工具</IRI>
+        <Literal xml:lang="zh">工具的子类；与武器互斥。羽扇为实例；诸葛亮使用羽扇。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#马</IRI>
+        <Literal xml:lang="zh">马</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#马</IRI>
+        <Literal xml:lang="zh">工具的子类（沿用原模型）。注意白龙马没有显式指定类型，推理机可以从「赵云 骑乘 白龙马」的值域推出它属于马。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#蜀方人物</IRI>
+        <Literal xml:lang="zh">蜀方人物</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#蜀方人物</IRI>
+        <Literal xml:lang="zh">新增教学类：Equivalent To 为「人物 and (属于 value 蜀)」；当推理机推断出属于蜀时，可将相关人物自动归类。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#教学角色</IRI>
+        <Literal xml:lang="zh">教学角色</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#教学角色</IRI>
+        <Literal xml:lang="zh">虚构练习人物的子类：用于演示传递属性「指挥链上级」及 Keys（键）功能，与三国史实无关。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#使用</IRI>
+        <Literal xml:lang="zh">使用</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#使用</IRI>
+        <Literal xml:lang="zh">Object Properties：主语是人物，宾语是工具；与「被使用」互为逆属性。例：关羽 使用 青龙刀。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#被使用</IRI>
+        <Literal xml:lang="zh">被使用</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#被使用</IRI>
+        <Literal xml:lang="zh">Object Properties：与「使用」互为 Inverse Of。推理后可由关羽使用青龙刀推出青龙刀被关羽使用。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#骑乘</IRI>
+        <Literal xml:lang="zh">骑乘</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#骑乘</IRI>
+        <Literal xml:lang="zh">Object Properties：Domain 人物、Range 马；Inverse Of 被骑乘。例：赵云骑乘白龙马，促进推理白龙马是马。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#被骑乘</IRI>
+        <Literal xml:lang="zh">被骑乘</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#被骑乘</IRI>
+        <Literal xml:lang="zh">Object Properties：与「骑乘」互为逆属性，推理后可看到马被人物骑乘。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#属于</IRI>
+        <Literal xml:lang="zh">属于</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#属于</IRI>
+        <Literal xml:lang="zh">Object Properties：Domain 人物、Range 势力；有子属性「执掌」并作为属性链「忠诚于 o 执掌」的结果。因为属于为非简单属性，不能用于基数 exactly 1。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#拥有成员</IRI>
+        <Literal xml:lang="zh">拥有成员</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#拥有成员</IRI>
+        <Literal xml:lang="zh">Object Properties：属于的逆属性；推理后蜀拥有成员刘备、关羽等。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#执掌</IRI>
+        <Literal xml:lang="zh">执掌</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#执掌</IRI>
+        <Literal xml:lang="zh">Object Properties：属于的子属性；特征 Functional；例：刘备执掌蜀。此属性在皇上类中可用于 exactly 1 限制。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#忠诚于</IRI>
+        <Literal xml:lang="zh">忠诚于</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#忠诚于</IRI>
+        <Literal xml:lang="zh">Object Properties：Inverse Of 统领；Domain 为文官 or 武官（OWL逻辑并集），Range 为皇上。例：关羽忠诚于刘备。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#统领</IRI>
+        <Literal xml:lang="zh">统领</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#统领</IRI>
+        <Literal xml:lang="zh">Object Properties：忠诚于的逆属性；刘备统领关羽等关系由推理得到，无需重复手工声明。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#结义</IRI>
+        <Literal xml:lang="zh">结义</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#结义</IRI>
+        <Literal xml:lang="zh">Object Properties：Characteristics 中勾选 Symmetric（对称）、Irreflexive（非自反）。刘备结义关羽可推得关羽结义刘备。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#指挥链上级</IRI>
+        <Literal xml:lang="zh">指挥链上级</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#指挥链上级</IRI>
+        <Literal xml:lang="zh">Object Properties：Characteristics 中设置 Transitive（传递）。虚构甲→乙→丙，推理得甲→丙；仅是练习数据。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#字</IRI>
+        <Literal xml:lang="zh">字</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#字</IRI>
+        <Literal xml:lang="zh">Data Properties：Domain 人物，Range xsd:string。例：关羽的字为云长；人物类另设字 max 1 string。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#武力值</IRI>
+        <Literal xml:lang="zh">武力值</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#武力值</IRI>
+        <Literal xml:lang="zh">Data Properties：Range xsd:integer。数值为本体演示设定，不作历史真实性声明；用于猛将的武力值≥95等价类。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#是否主公</IRI>
+        <Literal xml:lang="zh">是否主公</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#是否主公</IRI>
+        <Literal xml:lang="zh">Data Properties：Range xsd:boolean、Domain 人物、Functional。刘备为 true，关羽为 false，展示布尔值。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#演示评分</IRI>
+        <Literal xml:lang="zh">演示评分</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#演示评分</IRI>
+        <Literal xml:lang="zh">Data Properties：Range xsd:decimal；是「演示总分」的子属性。示例赵云为 9.5，仅为小数演示，不是史实评分。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#演示总分</IRI>
+        <Literal xml:lang="zh">演示总分</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#演示总分</IRI>
+        <Literal xml:lang="zh">Data Properties：Range xsd:decimal；上位数据属性，演示评分是它的子属性；9.5 可作为推理出的演示总分。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#演示编号</IRI>
+        <Literal xml:lang="zh">演示编号</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#演示编号</IRI>
+        <Literal xml:lang="zh">Data Properties：Domain 教学角色，Range xsd:string，Functional。Classes → 教学角色 → Keys 将它用作识别同一教学角色的键。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#教学提示</IRI>
+        <Literal xml:lang="zh">教学提示</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#教学提示</IRI>
+        <Literal xml:lang="zh">Annotation Properties：自定义注释属性，专门存放中文界面导航，注释不参与 OWL 逻辑推理。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#练习提示</IRI>
+        <Literal xml:lang="zh">练习提示</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#练习提示</IRI>
+        <Literal xml:lang="zh">Annotation Properties：教学提示的子注释属性，存放可复现的点击操作和查询练习。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#刘备</IRI>
+        <Literal xml:lang="zh">刘备</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#刘备</IRI>
+        <Literal xml:lang="zh">Individuals 页：皇上类实例；点击右侧 Property Assertions 查看「执掌 蜀」「使用 双股剑」「骑乘 的卢马」、字=玄德、武力值=75、是否主公=true。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#关羽</IRI>
+        <Literal xml:lang="zh">关羽</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#关羽</IRI>
+        <Literal xml:lang="zh">Individuals 页：显式类型武官；使用青龙刀、骑赤兔马、武力值97；推理后属于猛将及蜀方人物，且忠诚于刘备。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#张飞</IRI>
+        <Literal xml:lang="zh">张飞</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#张飞</IRI>
+        <Literal xml:lang="zh">Individuals 页：显式类型武官；使用丈八蛇矛、骑乌云踏雪、武力值98；推理后成为猛将。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#赵云</IRI>
+        <Literal xml:lang="zh">赵云</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#赵云</IRI>
+        <Literal xml:lang="zh">重点推理示例：刻意不直接声明他是人物、武官、猛将。由使用、骑乘、忠诚于、武力值97，启动 Reasoner 后自动归入这些类。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#诸葛亮</IRI>
+        <Literal xml:lang="zh">诸葛亮</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#诸葛亮</IRI>
+        <Literal xml:lang="zh">Individuals 页：文官实例；忠诚于刘备、使用羽扇、字孔明；可由属性链推理出「属于 蜀」。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#蜀</IRI>
+        <Literal xml:lang="zh">蜀</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#蜀</IRI>
+        <Literal xml:lang="zh">Individuals 页：势力实例。查看推理得到的逆属性「拥有成员」；它对应人物属于的势力。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#青龙刀</IRI>
+        <Literal xml:lang="zh">青龙刀</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#青龙刀</IRI>
+        <Literal xml:lang="zh">Individuals 页：武器实例；对象属性的逆属性推理可显示被关羽使用。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#丈八蛇矛</IRI>
+        <Literal xml:lang="zh">丈八蛇矛</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#丈八蛇矛</IRI>
+        <Literal xml:lang="zh">Individuals 页：武器实例；被张飞使用。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#龙胆枪</IRI>
+        <Literal xml:lang="zh">龙胆枪</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#龙胆枪</IRI>
+        <Literal xml:lang="zh">Individuals 页：武器实例；被赵云使用。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#双股剑</IRI>
+        <Literal xml:lang="zh">双股剑</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#双股剑</IRI>
+        <Literal xml:lang="zh">Individuals 页：武器实例；被刘备使用。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#羽扇</IRI>
+        <Literal xml:lang="zh">羽扇</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#羽扇</IRI>
+        <Literal xml:lang="zh">Individuals 页：日常工具实例；被诸葛亮使用。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#赤兔马</IRI>
+        <Literal xml:lang="zh">赤兔马</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#赤兔马</IRI>
+        <Literal xml:lang="zh">Individuals 页：马实例；由关羽骑乘；另有刘备「不骑乘赤兔马」的否定对象属性断言。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#的卢马</IRI>
+        <Literal xml:lang="zh">的卢马</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#的卢马</IRI>
+        <Literal xml:lang="zh">Individuals 页：马实例；由刘备骑乘。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#乌云踏雪</IRI>
+        <Literal xml:lang="zh">乌云踏雪</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#乌云踏雪</IRI>
+        <Literal xml:lang="zh">Individuals 页：马实例；由张飞骑乘。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#白龙马</IRI>
+        <Literal xml:lang="zh">白龙马</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#白龙马</IRI>
+        <Literal xml:lang="zh">Individuals 页：故意没有显式类型；由「赵云 骑乘 白龙马」及 Range=马推出它的类型。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#刘玄德</IRI>
+        <Literal xml:lang="zh">刘玄德</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#刘玄德</IRI>
+        <Literal xml:lang="zh">Individuals 页：Same As 与刘备相同个体；演示别名与个体等同性，不是另一个历史人物。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#演示角色甲</IRI>
+        <Literal xml:lang="zh">演示角色甲</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#演示角色甲</IRI>
+        <Literal xml:lang="zh">Individuals 页：虚构教学角色；指挥链上级指向演示角色乙；演示编号 A01。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#演示角色乙</IRI>
+        <Literal xml:lang="zh">演示角色乙</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#演示角色乙</IRI>
+        <Literal xml:lang="zh">Individuals 页：虚构教学角色；指挥链上级指向演示角色丙；演示编号 A02。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#演示角色丙</IRI>
+        <Literal xml:lang="zh">演示角色丙</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#演示角色丙</IRI>
+        <Literal xml:lang="zh">Individuals 页：虚构教学角色；推理后可被甲间接指向；演示编号 A03。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#人物</IRI>
+        <Literal xml:lang="zh">在 Classes 中选中人物 → Description → SubClass Of，双击某项能看到其 Manchester 语法；查看 Disjoint With 可找到势力、工具。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#武官</IRI>
+        <Literal xml:lang="zh">在 Classes 查看 Equivalent To。Reasoner → HermiT → Start reasoner 后，切换 Inferred 查看赵云；不要手动添加赵云的武官类型。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#猛将</IRI>
+        <Literal xml:lang="zh">在 DL Query 输入「猛将」，执行后查看 Instances，预期关羽、张飞、赵云出现。注意需要先运行推理机。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#蜀方人物</IRI>
+        <Literal xml:lang="zh">在 DL Query 输入「蜀方人物」并执行，可通过属性链得到诸葛亮等与蜀有关的人物。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#使用</IRI>
+        <Literal xml:lang="zh">在 Object Properties 中点击「使用」，观察 Inverse Of 和 Domain/Range；在 Individuals 中选关羽查看实例「使用 青龙刀」。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#属于</IRI>
+        <Literal xml:lang="zh">在 Object Properties 中查看「执掌」是它的子属性、属性链在 SubProperty Of 中；启动推理后查看关羽的属于蜀。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#结义</IRI>
+        <Literal xml:lang="zh">在 Object Properties → Characteristics 查看 Symmetric、Irreflexive；在 Individuals 中观察刘备和关羽的关系。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#指挥链上级</IRI>
+        <Literal xml:lang="zh">在 Object Properties → Characteristics 查看 Transitive，再在 Individuals 中依次检查教学角色甲、乙、丙。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#武力值</IRI>
+        <Literal xml:lang="zh">在 Data Properties 查看 Range=xsd:integer；在「猛将」Equivalent To 检查整数≥95约束。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#是否主公</IRI>
+        <Literal xml:lang="zh">在 Data Properties 查看 Functional；Individuals 中刘备=true、关羽=false。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#演示评分</IRI>
+        <Literal xml:lang="zh">Data Properties 中选中演示评分，Range=xsd:decimal；Sub Property Of 为演示总分；Individuals 中赵云=9.5。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#演示编号</IRI>
+        <Literal xml:lang="zh">在 Data Properties 中选中演示编号，查看 Functional 和 Range=xsd:string；在 Classes → 教学角色中查看 Keys。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#教学角色</IRI>
+        <Literal xml:lang="zh">在 Classes 中选中教学角色，查看 Keys=演示编号；三个虚构个体分别拥有 A01、A02、A03。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#教学提示</IRI>
+        <Literal xml:lang="zh">在 Annotation Properties 里选「教学提示」，其下可见「练习提示」；它们只存放说明，不改变类和实例的语义。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#赵云</IRI>
+        <Literal xml:lang="zh">对比 Reasoner 启动前后：赵云 Asserted Types（显式类型）为空，Inferred Types 出现人物、武官、猛将、蜀方人物。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#白龙马</IRI>
+        <Literal xml:lang="zh">对比 Reasoner 启动前后，白龙马的 Inferred Types 应包含马。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#刘玄德</IRI>
+        <Literal xml:lang="zh">在 Individuals 中点击刘玄德，查看 Same As；与刘备是同一个个体，因此其属性可共享。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#刘备</IRI>
+        <Literal xml:lang="zh">在 Individuals 的 Same As 查看刘玄德；在 Object Property Assertions 查看结义，在 Negative Object Property Assertions 查看不骑乘赤兔马。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#教学提示"/>
+        <IRI>#关羽</IRI>
+        <Literal xml:lang="zh">在 Individuals 的 Negative Data Property Assertions 查看「武力值 != 60」；这是额外的否定数据断言示例。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#练习提示"/>
+        <IRI>#猛将</IRI>
+        <Literal xml:lang="zh">试着将数据属性「武力值」中的赵云数值97改为90（建议另存练习副本），重新启动推理机，观察猛将类型是否消失。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#练习提示"/>
+        <IRI>#结义</IRI>
+        <Literal xml:lang="zh">在刘备的对象属性断言中仅声明刘备结义关羽；无需额外填关羽结义刘备，推理机自动处理对称性。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#练习提示"/>
+        <IRI>#指挥链上级</IRI>
+        <Literal xml:lang="zh">删除教学角色乙→教学角色丙的断言并重跑推理，检查甲→丙是否还存在。</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#练习提示"/>
+        <IRI>#赵云</IRI>
+        <Literal xml:lang="zh">不要添加赵云的显式类型，否则不易区分 Asserted 和 Inferred；使用 Reasoner 检查分类结果。</Literal>
+    </AnnotationAssertion>
+</Ontology>
